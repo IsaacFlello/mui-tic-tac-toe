@@ -5,7 +5,7 @@ import Button from '@mui/material/Button'
 function App() {
 
   return (
-    <Button>Hello!</Button>
+    <Button variant="outlined">Hello!</Button>
   )
 }
 
