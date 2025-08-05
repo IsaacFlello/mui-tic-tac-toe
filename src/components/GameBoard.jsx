@@ -6,12 +6,15 @@ export default function GameBoard({ gameHistory, currentTurn, currentPlayer, upd
       <Button key={indexOfClickedSquare}
               variant="outlined"
               onClick={() => {
-                const newHistoryRecord = gameHistory[currentTurn];
-                newHistoryRecord[indexOfClickedSquare] = currentPlayer;
-                const updatedHistory = [...gameHistory, newHistoryRecord];
-                updateGameHistoryFn(updatedHistory);
-                updateCurrentTurnFn(currentTurn + 1);
-              }}
+                if(squareVal === null){
+                  const newHistoryRecord = gameHistory[currentTurn];
+                  newHistoryRecord[indexOfClickedSquare] = currentPlayer;
+                  const updatedHistory = [...gameHistory, newHistoryRecord];
+                  updateGameHistoryFn(updatedHistory);
+                  updateCurrentTurnFn(currentTurn + 1);
+                }
+              }
+            }
       >
         {squareVal}
       </Button>
