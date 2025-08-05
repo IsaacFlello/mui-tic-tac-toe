@@ -5,8 +5,9 @@ import GameBoard from './components/GameBoard.jsx'
 import GameHistory from './components/GameHistory.jsx';
 
 export default function App() {
-  const [gameHistory, setGameHistory] = useState([Array(9).fill("x")]);
+  const [gameHistory, setGameHistory] = useState( [ Array(9).fill(null) ] );
   const [currentTurn, setCurrentTurn] = useState(0);
+  const currentPlayer = (currentTurn % 2 === 0) ? "X" : "O";
 
   return (
     <main>
