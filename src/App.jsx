@@ -7,11 +7,17 @@ import GameHistory from './components/GameHistory.jsx';
 export default function App() {
   const [gameHistory, setGameHistory] = useState( [ Array(9).fill(null) ] );
   const [currentTurn, setCurrentTurn] = useState(0);
-  const currentPlayer = (currentTurn % 2 === 0) ? "X" : "O";
+  const currentPlayer = currentTurn % 2 === 0 ? "X" : "O";
 
   return (
     <main>
-      <GameBoard gameHistory={gameHistory} currentTurn={currentTurn}></GameBoard>
+      <GameBoard  gameHistory={gameHistory}
+                  currentTurn={currentTurn}
+                  currentPlayer={currentPlayer}
+                  updateGameHistoryFn={setGameHistory}   
+                  updateCurrentTurnFn={setCurrentTurn}>  
+      </GameBoard>
+
       <GameHistory></GameHistory>
     </main>
   )
