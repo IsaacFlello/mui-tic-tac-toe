@@ -1,10 +1,30 @@
 import Button from '@mui/material/Button'
+import {createTheme, ThemeProvider} from '@mui/material';
+
+// const squareTheme = createTheme({
+//   components: {
+//     MuiButton: {
+//       variants: [
+//         {
+//           props: {
+//             variant: "outlined",
+//           },
+//           style: {
+//             fontSize: "clamp(36px, 2vw, 100px);",
+//           },
+//         },
+//       ]
+//     }
+//   }
+// });
 
 export default function GameBoard({ gameHistory, currentTurn, currentPlayer, updateGameHistoryFn, updateCurrentTurnFn }) {
   const squares = gameHistory[currentTurn].map((squareVal, indexOfClickedSquare) => {
     return (
+      // <ThemeProvider theme={squareTheme} key={indexOfClickedSquare}>
       <Button key={indexOfClickedSquare}
               variant="outlined"
+              sx={{ fontSize:"100%"}}
               onClick={() => {
                 if(squareVal === null){
                   const newHistoryRecord = gameHistory[currentTurn];
@@ -18,6 +38,7 @@ export default function GameBoard({ gameHistory, currentTurn, currentPlayer, upd
       >
         {squareVal}
       </Button>
+      // </ThemeProvider>
     )
   })
 

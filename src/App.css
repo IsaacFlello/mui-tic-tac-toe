@@ -55,3 +55,8 @@ main {
         min-width: 300px;
     }
 }
+
+button {
+  font-size: clamp(12px, 2vw, 24px);
+  color: red;
+}
