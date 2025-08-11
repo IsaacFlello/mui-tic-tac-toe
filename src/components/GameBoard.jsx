@@ -24,7 +24,7 @@ export default function GameBoard({ gameHistory, currentTurn, currentPlayer, upd
       // <ThemeProvider theme={squareTheme} key={indexOfClickedSquare}>
       <Button key={indexOfClickedSquare}
               variant="outlined"
-              sx={{ fontSize:"100%"}}
+              sx={{ fontSize:"clamp(36px, 18vmin, 300px)", lineHeight: "0.75"}}
               onClick={() => {
                 if(squareVal === null){
                   const newHistoryRecord = gameHistory[currentTurn];
