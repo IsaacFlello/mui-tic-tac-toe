@@ -1,4 +1,4 @@
-import '../styles/GameHistoryStyles.css';
+import '../styles/GameHistoryStyles.css'
 
 
 export default function GameHistory( {gameHistory, currentTurn} ) {
@@ -7,7 +7,7 @@ export default function GameHistory( {gameHistory, currentTurn} ) {
   })
 
   return (
-    <section id="game-history-section">
+    <section id="game-history">
       {/* <BoardSnapshot boardValues={exampleHistoryRecord}></BoardSnapshot> */}
       {snapshotElements}
     </section>

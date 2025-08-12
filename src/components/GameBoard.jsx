@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button'
+import '../styles/GameBoardStyles.css'
 
 export default function GameBoard({ 
   gameHistory, 
@@ -42,5 +43,5 @@ export default function GameBoard({
     )
   })
 
-  return (<div id="game-board">{squares}</div>)
+  return (<section id="game-board">{squares}</section>)
 }

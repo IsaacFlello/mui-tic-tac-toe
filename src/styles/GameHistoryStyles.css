@@ -1,18 +1,12 @@
-#game-history-section {
-  padding: 1em;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1em;
-  overflow-y: scroll;
-  max-height: 50vmin;
-}
+
 
 #historical-record {
   display: grid;
-  grid-template-columns: repeat(3, 50px);
-  grid-template-rows: repeat(3, 50px);  
+  width: 80%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);  
 }
 
 #historical-record > span {
