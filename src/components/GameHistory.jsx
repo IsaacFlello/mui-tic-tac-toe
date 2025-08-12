@@ -16,7 +16,7 @@ export default function GameHistory( {gameHistory, currentTurn} ) {
 
 function BoardSnapshot( {boardValues} ) {
   const squares = boardValues.map((value, index) => {
-    return (<span key={index}>{value}</span>);
+    return (<span key={index}><span>{value}</span></span>);
   });
 
   return (

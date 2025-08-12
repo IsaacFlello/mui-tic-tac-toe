@@ -11,4 +11,14 @@
 
 #historical-record > span {
   outline: 1px solid grey;
+  text-align: center;
+  padding: auto;
+  display: flex;
+  place-content: center;
+}
+
+#historical-record > span > span {
+  line-height: 0px;
+  height: 1px;
+  margin-top: 50%;
 }
