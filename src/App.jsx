@@ -17,8 +17,7 @@ export default function App() {
                   updateGameHistoryFn={setGameHistory}   
                   updateCurrentTurnFn={setCurrentTurn}>  
       </GameBoard>
-
-      <GameHistory></GameHistory>
+      <GameHistory gameHistory={gameHistory} currentTurn={currentTurn}></GameHistory>
     </main>
   )
 }

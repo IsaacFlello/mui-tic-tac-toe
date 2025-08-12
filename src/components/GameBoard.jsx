@@ -1,35 +1,36 @@
 import Button from '@mui/material/Button'
-import {createTheme, ThemeProvider} from '@mui/material';
 
-// const squareTheme = createTheme({
-//   components: {
-//     MuiButton: {
-//       variants: [
-//         {
-//           props: {
-//             variant: "outlined",
-//           },
-//           style: {
-//             fontSize: "clamp(36px, 2vw, 100px);",
-//           },
-//         },
-//       ]
-//     }
-//   }
-// });
-
-export default function GameBoard({ gameHistory, currentTurn, currentPlayer, updateGameHistoryFn, updateCurrentTurnFn }) {
+export default function GameBoard({ 
+  gameHistory, 
+  currentTurn, 
+  currentPlayer, 
+  updateGameHistoryFn, 
+  updateCurrentTurnFn }
+) {
   const squares = gameHistory[currentTurn].map((squareVal, indexOfClickedSquare) => {
     return (
-      // <ThemeProvider theme={squareTheme} key={indexOfClickedSquare}>
       <Button key={indexOfClickedSquare}
               variant="outlined"
               sx={{ fontSize:"clamp(36px, 18vmin, 300px)", lineHeight: "0.75"}}
               onClick={() => {
                 if(squareVal === null){
-                  const newHistoryRecord = gameHistory[currentTurn];
+                  console.log("current full history:");
+                  console.log(gameHistory);
+
+                  const newHistoryRecord = [...gameHistory[currentTurn]]; 
+                  console.log(`slice:`);
+                  console.log(newHistoryRecord);
+
+                  console.log(indexOfClickedSquare);
+
                   newHistoryRecord[indexOfClickedSquare] = currentPlayer;
-                  const updatedHistory = [...gameHistory, newHistoryRecord];
+                  console.log(`New board state:`);
+                  console.log(newHistoryRecord);
+
+                  const updatedHistory = [...gameHistory.slice(0, currentTurn+1), newHistoryRecord];
+                  console.log("Updated history:")
+                  console.log(updatedHistory);
+
                   updateGameHistoryFn(updatedHistory);
                   updateCurrentTurnFn(currentTurn + 1);
                 }
@@ -38,7 +39,6 @@ export default function GameBoard({ gameHistory, currentTurn, currentPlayer, upd
       >
         {squareVal}
       </Button>
-      // </ThemeProvider>
     )
   })
 

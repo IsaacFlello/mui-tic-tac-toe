@@ -1,7 +1,25 @@
-export default function GameHistory() {
+import '../styles/GameHistoryStyles.css';
+
+
+export default function GameHistory( {gameHistory, currentTurn} ) {
+  const snapshotElements = gameHistory.map((snapshot, index) => {
+    return (<BoardSnapshot key={index} boardValues={snapshot}></BoardSnapshot>);
+  })
+
   return (
     <section id="game-history-section">
-      <div>Game History Here</div>
+      {/* <BoardSnapshot boardValues={exampleHistoryRecord}></BoardSnapshot> */}
+      {snapshotElements}
     </section>
   )
+}
+
+function BoardSnapshot( {boardValues} ) {
+  const squares = boardValues.map((value, index) => {
+    return (<span key={index}>{value}</span>);
+  });
+
+  return (
+    <div id="historical-record">{squares}</div>
+  );
 }
